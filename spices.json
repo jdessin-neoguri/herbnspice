@@ -1,26 +1,26 @@
 [
   {
     "id": "cinnamon",
-    "name": "시나몬",
+    "name": "계피",
     "name_en": "Cinnamon",
     "latin": "Cinnamomum verum",
     "other_names": [
       {
-        "lang": "그리스어",
-        "code": "el",
-        "name": "κανέλα",
-        "roman": "kanéla"
+        "lang": "중국어",
+        "code": "cn",
+        "name": "桂皮",
+        "roman": "guìpí"
       }
     ],
     "category": "향신료",
     "emoji": "🪵",
     "image": "images/cinnamon.jpg",
     "summary": "달콤하고 따뜻한 향의 나무껍질",
-    "description": "계피나무 속껍질을 말려 돌돌 말린 향신료입니다. 실론 시나몬은 섬세하고 부드러우며, 카시아는 더 진하고 매운 편이에요. 디저트뿐 아니라 중동·인도 요리의 고기 스튜에도 자주 쓰입니다.",
+    "description": "녹나무속 나무의 속껍질을 말린 향신료입니다. 실론 시나몬은 섬세하고 부드러우며, 카시아(계피)는 더 진하고 매운 편입니다. 디저트뿐 아니라 중동·인도 요리의 고기 스튜에도 자주 쓰입니다.",
     "origin": "스리랑카, 인도 남부",
     "flavor": [
       "달콤함",
-      "따뜻함",
+      "따뜻함(?)",
       "나무향"
     ],
     "uses": [

@@ -91,9 +91,16 @@ function renderDetail(spices) {
 
   main.innerHTML = `
     <article class="card">
-      <div class="card-image">
-        <img src="${esc(s.image)}" alt="${esc(s.name)}"
-             onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'placeholder',textContent:'${esc(s.emoji || "🫙")}'}))">
+      <div class="card-side">
+        <div class="card-image">
+          <img src="${esc(s.image)}" alt="${esc(s.name)}"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'placeholder',textContent:'${esc(s.emoji || "🫙")}'}))">
+        </div>
+        <dl class="origin">
+          <dt>원산지</dt>
+          <dd>${esc(s.origin)}</dd>
+        </dl>
+        ${s.credit ? `<p class="credit">이미지: ${esc(s.credit)}</p>` : ""}
       </div>
       <div class="card-body">
         <span class="tag">${esc(s.category)}</span>
@@ -102,9 +109,6 @@ function renderDetail(spices) {
         <p class="summary">${esc(s.summary)}</p>
         <p>${esc(s.description)}</p>
 
-        <h3>원산지</h3>
-        <p>${esc(s.origin)}</p>
-
         <h3>풍미</h3>
         <ul class="chips">${chips(s.flavor)}</ul>
 
@@ -112,7 +116,6 @@ function renderDetail(spices) {
         <ul class="chips">${chips(s.uses)}</ul>
 
         ${pairChips ? `<h3>잘 어울리는 친구</h3><ul class="chips">${pairChips}</ul>` : ""}
-        ${s.credit ? `<p class="credit">이미지: ${esc(s.credit)}</p>` : ""}
       </div>
     </article>`;
 
