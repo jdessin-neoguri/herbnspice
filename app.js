@@ -69,6 +69,28 @@ function namesTable(s) {
     .join("")}</tbody></table>`;
 }
 
+/* ---------- 화학 성분 표 ----------
+   compounds 예: [{ "name": "신남알데하이드", "name_en": "Cinnamaldehyde", "formula": "C9H8O", "note": "계피 향의 주성분" }]
+   화학식의 숫자는 자동으로 아래첨자로 바뀝니다. 비어 있으면 빈 표가 나옵니다. */
+const formula = (f) => esc(f || "").replace(/(\d+)/g, "<sub>$1</sub>");
+function compoundsTable(list = []) {
+  const rows = list.length
+    ? list
+        .map(
+          (c) => `<tr>
+            <td>${esc(c.name || "")}${c.name_en ? `<span class="roman">${esc(c.name_en)}</span>` : ""}</td>
+            <td class="formula">${formula(c.formula)}</td>
+            <td>${esc(c.note || "")}</td>
+          </tr>`
+        )
+        .join("")
+    : `<tr class="empty"><td colspan="3">아직 정리 중이에요</td></tr>`;
+  return `<table class="compounds-table">
+    <thead><tr><th scope="col">성분</th><th scope="col">화학식</th><th scope="col">비고</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
 /* ---------- 상세 페이지 (spice.html) ---------- */
 function renderDetail(spices) {
   const main = document.getElementById("detail");
@@ -109,13 +131,13 @@ function renderDetail(spices) {
         <p class="summary">${esc(s.summary)}</p>
         <p>${esc(s.description)}</p>
 
-        <h3>풍미</h3>
-        <ul class="chips">${chips(s.flavor)}</ul>
-
         <h3>이렇게 써요</h3>
         <ul class="chips">${chips(s.uses)}</ul>
 
         ${pairChips ? `<h3>잘 어울리는 친구</h3><ul class="chips">${pairChips}</ul>` : ""}
+
+        <h3>주요 화학 성분</h3>
+        ${compoundsTable(s.compounds)}
       </div>
     </article>`;
 
