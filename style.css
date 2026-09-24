@@ -17,20 +17,29 @@
 }
 
 /* ===== 색상 토큰 =====
-   메인 4색: #c81d11 (진홍) · #ffb19a (살구) · #6e0509 (적갈) · #dca562 (황금) */
+   메인 4색: #c81d11 (진홍) · #ffb19a (살구) · #6e0509 (적갈) · #dca562 (황금)
+   넓은 면적(배경·서랍)은 적갈을 어둡게 가라앉힌 밤색으로 두고,
+   진홍·살구·황금은 글씨·테두리·포인트에만 조금씩 씁니다. */
 :root {
-  --bg: #250a5c;             
-  --bg-deep: #4a0306;
-  --drawer: #7c0a0d;         
-  --drawer-hi: #8c1012;
-  --red: #c81d11;            /* 진홍 */
-  --peach: #ffb19a;          /* 살구 */
-  --gold: #dca562;           /* 황금 */
+  --bg: #26100c;             /* 적갈을 어둡게 가라앉힌 밤색 (배경) */
+  --bg-deep: #170805;
+  --drawer: #36160f;         /* 서랍: 배경과 같은 계열, 한 톤 밝게 */
+  --drawer-hi: #431c14;
+  --maroon: #6e0509;         /* 적갈 : 카드 안 제목·이미지 칸 */
+  --red: #c81d11;            /* 진홍 : 태그·영문명·링크 */
+  --peach: #ffb19a;          /* 살구 : 어두운 바탕 위 포인트 글씨 */
+  --gold: #dca562;           /* 황금 : 제목·테두리·손잡이 */
   --gold-dark: #a8783a;
-  --cream: #fff4ee;          /* 카드 바탕 (살구빛 도는 흰색) */
-  --cream-dark: #ffe0d4;
-  --ink: #3a0805;
-  --ink-soft: #8a4a3c;
+  --teal: #1f6f6b;           /* 터키석 청록 : 이즈닉 타일 느낌의 보조색 (작은 곳에만) */
+  --teal-light: #2f8f88;
+  --cream: #fbf3e9;          /* 카드·이름표 바탕 */
+  --cream-dark: #f1e1cc;
+  --text-light: #f3e4d6;     /* 어두운 바탕 위 본문 */
+  --ink: #2e0f0a;
+  --ink-soft: #85584a;
+
+  /* 팔각별(khatam) — 장식선 가운데에 쓰는 문양 */
+  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23dca562'%3E%3Crect x='5' y='5' width='14' height='14'/%3E%3Crect x='5' y='5' width='14' height='14' transform='rotate(45 12 12)'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='3.2' fill='%231f6f6b'/%3E%3C/svg%3E");
 
   --font: "Bookk Myungjo", "Noto Serif", serif;
 }
@@ -41,11 +50,11 @@ body {
   margin: 0;
   font-family: var(--font);
   font-size: 17px;
-  color: var(--cream);
+  color: var(--text-light);
   background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse at 50% -10%, rgba(220,165,98,.22), transparent 55%),
-    radial-gradient(ellipse at 50% 120%, rgba(200,29,17,.3), transparent 60%);
+    radial-gradient(ellipse at 50% -10%, rgba(220,165,98,.13), transparent 55%),
+    radial-gradient(ellipse at 50% 120%, rgba(110,5,9,.45), transparent 65%);
   background-attachment: fixed;
   min-height: 100vh;
   word-break: keep-all;   /* 한글이 글자 단위로 끊기지 않게 */
@@ -73,13 +82,13 @@ body.shop { display: flex; flex-direction: column; }
   font-style: italic;
   font-size: 1rem;
   line-height: 1.65;
-  color: var(--cream);
+  color: var(--text-light);
 }
 .motto-ko {
   margin: 10px 0 0;
   font-size: .92rem;
   line-height: 1.65;
-  color: var(--cream);
+  color: var(--text-light);
   opacity: .85;
 }
 .motto figcaption {
@@ -108,7 +117,7 @@ body.shop { display: flex; flex-direction: column; }
   transition: background .2s;
 }
 .filter:hover { background: var(--drawer-hi); }
-.filter.active { background: var(--gold); color: var(--bg-deep); }
+.filter.active { background: var(--teal); color: var(--cream); box-shadow: inset 0 0 0 1px var(--gold); }
 
 /* ===== 서랍장 : 화면 가득 ===== */
 .shop-main {
@@ -124,9 +133,24 @@ body.shop { display: flex; flex-direction: column; }
   grid-auto-rows: minmax(170px, 1fr);
   gap: clamp(10px, 1.4vw, 18px);
   padding: clamp(12px, 1.6vw, 20px);
-  border: 1px solid rgba(220,165,98,.4);
+  border: 1px solid rgba(220,165,98,.45);
   background: rgba(0,0,0,.12);
+  position: relative;
 }
+.cabinet::before, .cabinet::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 1px solid rgba(220,165,98,.6);
+  background: var(--star) center / 18px 18px no-repeat, var(--bg-deep);
+  pointer-events: none;
+}
+.cabinet::before { top: -15px; }
+.cabinet::after { bottom: -15px; }
 @media (max-width: 520px) {
   .cabinet { grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(140px, 1fr); gap: 10px; padding: 10px; }
 }
@@ -169,6 +193,7 @@ body.shop { display: flex; flex-direction: column; }
   outline-offset: 2px;
   padding: 10px 14px 8px;
   min-width: 62%;
+  border-top: 7px solid var(--spice, var(--gold));  /* 향신료 고유색 띠 */
   text-align: center;
   box-shadow: 0 3px 5px rgba(0,0,0,.4);
 }
@@ -256,8 +281,9 @@ body.shop { display: flex; flex-direction: column; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--red), var(--bg));
+  background: linear-gradient(180deg, var(--maroon), #3a0a07);
   border: 2px solid var(--gold);
+  border-bottom: 8px solid var(--spice, var(--gold));  /* 향신료 고유색 띠 */
   outline: 1px solid var(--gold-dark);
   outline-offset: 3px;
   margin: 4px;
@@ -273,16 +299,16 @@ body.shop { display: flex; flex-direction: column; }
   align-items: baseline;
   margin: 16px 4px 0;
   padding: 10px 12px;
-  background: rgba(200,29,17,.08);
-  border-left: 3px solid var(--red);
+  background: rgba(31,111,107,.07);
+  border-left: 3px solid var(--teal);
 }
-.origin dt { font-weight: 700; color: var(--bg); white-space: nowrap; }
+.origin dt { font-weight: 700; color: var(--maroon); white-space: nowrap; }
 .origin dd { margin: 0; }
 
 .tag {
   display: inline-block;
   font-size: .8rem;
-  background: var(--red);
+  background: var(--teal);
   color: var(--cream);
   padding: 2px 14px;
   clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0 50%);
@@ -314,7 +340,7 @@ body.shop { display: flex; flex-direction: column; }
 .names-table th {
   width: 7em;
   font-weight: 700;
-  color: var(--bg);
+  color: var(--maroon);
   background: rgba(220,165,98,.12);
   white-space: nowrap;
 }
@@ -332,12 +358,12 @@ body.shop { display: flex; flex-direction: column; }
   font-weight: 700;
   font-size: 1rem;
   margin: 22px 0 8px;
-  color: var(--bg);
+  color: var(--maroon);
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.card-body h3::before { content: "✦"; color: var(--gold-dark); font-size: .75rem; }
+.card-body h3::before { content: ""; width: 12px; height: 12px; background: var(--star) center / contain no-repeat; flex: none; }
 .card-body h3::after {
   content: "";
   flex: 1;
@@ -392,7 +418,7 @@ body.shop { display: flex; flex-direction: column; }
 }
 .compounds-table thead th {
   font-weight: 700;
-  color: var(--bg);
+  color: var(--maroon);
   background: rgba(220,165,98,.18);
 }
 .compounds-table td.formula { white-space: nowrap; }
@@ -403,3 +429,25 @@ body.shop { display: flex; flex-direction: column; }
   font-style: italic;
   padding: 14px;
 }
+
+/* ===== 장식선 : 가는 금선 + 가운데 팔각별 ===== */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 420px;
+  margin: 26px auto 0;
+}
+.ornament::before, .ornament::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.ornament::after { background: linear-gradient(90deg, var(--gold), transparent); }
+.ornament {
+  background: var(--star) center / 20px 20px no-repeat;
+  min-height: 20px;
+}
+.ornament::before { margin-right: 22px; }
+.ornament::after { margin-left: 22px; }

@@ -17,6 +17,7 @@ function renderCabinet(spices) {
     .map(
       (s) => `
       <button class="drawer" data-id="${esc(s.id)}" data-category="${esc(s.category)}"
+              style="--spice: ${esc(s.color || "#dca562")}"
               aria-label="${esc(s.name)} 서랍 열기">
         <span class="label">
           <span class="label-name">${esc(s.name)}</span>
@@ -70,10 +71,12 @@ function namesTable(s) {
 }
 
 /* ---------- 화학 성분 표 ----------
-   compounds 예: [{ "name": "신남알데하이드", "name_en": "Cinnamaldehyde", "formula": "C9H8O", "note": "계피 향의 주성분" }]
+   compounds 예: ["Cinnamaldehyde"] 또는 [{ "name": "신남알데하이드", "name_en": "Cinnamaldehyde", "formula": "C9H8O", "note": "계피 향의 주성분" }]
    화학식의 숫자는 자동으로 아래첨자로 바뀝니다. 비어 있으면 빈 표가 나옵니다. */
 const formula = (f) => esc(f || "").replace(/(\d+)/g, "<sub>$1</sub>");
 function compoundsTable(list = []) {
+  // "Cinnamaldehyde"처럼 문자열만 적어도 성분 이름으로 표시
+  list = (list || []).filter(Boolean).map((c) => (typeof c === "string" ? { name: c } : c));
   const rows = list.length
     ? list
         .map(
@@ -112,7 +115,7 @@ function renderDetail(spices) {
     .join("");
 
   main.innerHTML = `
-    <article class="card">
+    <article class="card" style="--spice: ${esc(s.color || "#dca562")}">
       <div class="card-side">
         <div class="card-image">
           <img src="${esc(s.image)}" alt="${esc(s.name)}"
