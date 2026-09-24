@@ -270,5 +270,53 @@
     "compounds": [],
     "uses": [],
     "pairs": []
+  },
+  {
+    "id": "dill",
+    "name": "딜",
+    "name_en": "Dill",
+    "latin": "",
+    "other_names": [],
+    "category": "향신료",
+    "emoji": "🌱",
+    "image": "images/.jpg",
+    "summary": "",
+    "description": "",
+    "origin": "",
+    "compounds": [],
+    "uses": [],
+    "pairs": []
+  },
+    {
+    "id": "mustardseeds",
+    "name": "겨자씨",
+    "name_en": "Mustard seeds",
+    "latin": "",
+    "other_names": [],
+    "category": "향신료",
+    "emoji": "🌱",
+    "image": "images/.jpg",
+    "summary": "",
+    "description": "",
+    "origin": "",
+    "compounds": [],
+    "uses": [],
+    "pairs": []
+  },
+    {
+    "id": "allspice",
+    "name": "올스파이스",
+    "name_en": "Allspice",
+    "latin": "",
+    "other_names": [],
+    "category": "향신료",
+    "emoji": "🌱",
+    "image": "images/.jpg",
+    "summary": "",
+    "description": "",
+    "origin": "",
+    "compounds": [],
+    "uses": [],
+    "pairs": []
   }
 ]
