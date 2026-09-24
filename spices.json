@@ -4,179 +4,339 @@
     "name": "시나몬",
     "name_en": "Cinnamon",
     "latin": "Cinnamomum verum",
+    "other_names": [
+      {
+        "lang": "그리스어",
+        "code": "el",
+        "name": "κανέλα",
+        "roman": "kanéla"
+      }
+    ],
     "category": "향신료",
     "emoji": "🪵",
     "image": "images/cinnamon.jpg",
     "summary": "달콤하고 따뜻한 향의 나무껍질",
     "description": "계피나무 속껍질을 말려 돌돌 말린 향신료입니다. 실론 시나몬은 섬세하고 부드러우며, 카시아는 더 진하고 매운 편이에요. 디저트뿐 아니라 중동·인도 요리의 고기 스튜에도 자주 쓰입니다.",
     "origin": "스리랑카, 인도 남부",
-    "flavor": ["달콤함", "따뜻함", "나무향"],
-    "uses": ["베이킹", "차·음료", "커리", "스튜"],
-    "pairs": ["clove", "nutmeg", "cardamom"]
+    "flavor": [
+      "달콤함",
+      "따뜻함",
+      "나무향"
+    ],
+    "uses": [
+      "베이킹",
+      "차·음료",
+      "커리",
+      "스튜"
+    ],
+    "pairs": [
+      "clove",
+      "nutmeg",
+      "cardamom"
+    ]
   },
   {
     "id": "clove",
     "name": "정향",
     "name_en": "Clove",
     "latin": "Syzygium aromaticum",
+    "other_names": [],
     "category": "향신료",
     "emoji": "🌰",
     "image": "images/clove.jpg",
     "summary": "못처럼 생긴 강렬한 꽃봉오리",
     "description": "피기 전의 꽃봉오리를 말린 것으로, 생김새가 못(丁)을 닮아 정향이라 불립니다. 향이 매우 강해 소량만 넣어도 존재감이 뚜렷합니다.",
     "origin": "인도네시아 말루쿠 제도",
-    "flavor": ["강렬함", "약간 쓴맛", "얼얼함"],
-    "uses": ["햄 요리", "뱅쇼", "피클", "가람 마살라"],
-    "pairs": ["cinnamon", "star-anise", "nutmeg"]
+    "flavor": [
+      "강렬함",
+      "약간 쓴맛",
+      "얼얼함"
+    ],
+    "uses": [
+      "햄 요리",
+      "뱅쇼",
+      "피클",
+      "가람 마살라"
+    ],
+    "pairs": [
+      "cinnamon",
+      "star-anise",
+      "nutmeg"
+    ]
   },
   {
     "id": "star-anise",
     "name": "팔각",
     "name_en": "Star Anise",
     "latin": "Illicium verum",
+    "other_names": [],
     "category": "향신료",
     "emoji": "⭐",
     "image": "images/star-anise.jpg",
     "summary": "여덟 갈래 별 모양 열매",
     "description": "별 모양의 열매를 말린 향신료로 감초와 비슷한 단 향이 납니다. 중국 오향분의 핵심 재료이며, 베트남 쌀국수 육수에도 빠지지 않아요.",
     "origin": "중국 남부, 베트남",
-    "flavor": ["감초향", "달콤함"],
-    "uses": ["쌀국수 육수", "동파육", "오향분"],
-    "pairs": ["cinnamon", "clove", "ginger"]
+    "flavor": [
+      "감초향",
+      "달콤함"
+    ],
+    "uses": [
+      "쌀국수 육수",
+      "동파육",
+      "오향분"
+    ],
+    "pairs": [
+      "cinnamon",
+      "clove",
+      "ginger"
+    ]
   },
   {
     "id": "cardamom",
     "name": "카다멈",
     "name_en": "Cardamom",
     "latin": "Elettaria cardamomum",
+    "other_names": [],
     "category": "향신료",
     "emoji": "🟢",
     "image": "images/cardamom.jpg",
     "summary": "향신료의 여왕이라 불리는 초록 꼬투리",
     "description": "작은 초록 꼬투리 안의 검은 씨앗에서 상쾌하고 화사한 향이 납니다. 짜이, 북유럽 빵, 아랍식 커피에 두루 쓰입니다.",
     "origin": "인도 남부, 과테말라",
-    "flavor": ["상쾌함", "꽃향", "시트러스"],
-    "uses": ["짜이", "카다멈 번", "비리야니"],
-    "pairs": ["cinnamon", "ginger", "saffron"]
+    "flavor": [
+      "상쾌함",
+      "꽃향",
+      "시트러스"
+    ],
+    "uses": [
+      "짜이",
+      "카다멈 번",
+      "비리야니"
+    ],
+    "pairs": [
+      "cinnamon",
+      "ginger",
+      "saffron"
+    ]
   },
   {
     "id": "cumin",
     "name": "커민",
     "name_en": "Cumin",
     "latin": "Cuminum cyminum",
+    "other_names": [],
     "category": "향신료",
     "emoji": "🟤",
     "image": "images/cumin.jpg",
     "summary": "커리와 타코의 흙내음",
     "description": "미나리과 식물의 씨앗으로, 볶으면 고소하고 흙내음 섞인 깊은 향이 올라옵니다. 인도·중동·멕시코 요리의 기본 향신료입니다.",
     "origin": "지중해 동부, 서남아시아",
-    "flavor": ["흙내음", "고소함", "쌉쌀함"],
-    "uses": ["커리", "칠리", "양꼬치", "후무스"],
-    "pairs": ["coriander", "turmeric", "chili"]
+    "flavor": [
+      "흙내음",
+      "고소함",
+      "쌉쌀함"
+    ],
+    "uses": [
+      "커리",
+      "칠리",
+      "양꼬치",
+      "후무스"
+    ],
+    "pairs": [
+      "coriander",
+      "turmeric",
+      "chili"
+    ]
   },
   {
     "id": "turmeric",
     "name": "강황",
     "name_en": "Turmeric",
     "latin": "Curcuma longa",
+    "other_names": [],
     "category": "향신료",
     "emoji": "🟡",
     "image": "images/turmeric.jpg",
     "summary": "노란빛을 내는 뿌리",
     "description": "생강과 식물의 뿌리줄기를 말려 간 것으로, 요리에 선명한 노란색을 입힙니다. 향 자체는 은은하고 약간 쌉쌀해요.",
     "origin": "인도",
-    "flavor": ["쌉쌀함", "흙내음"],
-    "uses": ["커리", "골든 밀크", "단무지 색 내기"],
-    "pairs": ["cumin", "ginger", "chili"]
+    "flavor": [
+      "쌉쌀함",
+      "흙내음"
+    ],
+    "uses": [
+      "커리",
+      "골든 밀크",
+      "단무지 색 내기"
+    ],
+    "pairs": [
+      "cumin",
+      "ginger",
+      "chili"
+    ]
   },
   {
     "id": "saffron",
     "name": "사프란",
     "name_en": "Saffron",
     "latin": "Crocus sativus",
+    "other_names": [],
     "category": "향신료",
     "emoji": "🌸",
     "image": "images/saffron.jpg",
     "summary": "세상에서 가장 비싼 향신료",
     "description": "크로커스 꽃의 암술머리를 하나하나 손으로 따서 말립니다. 꽃 한 송이에 세 가닥뿐이라 매우 귀하며, 꿀 같은 향과 황금빛을 냅니다.",
     "origin": "이란, 스페인, 카슈미르",
-    "flavor": ["꿀향", "꽃향", "약간 쌉쌀함"],
-    "uses": ["파에야", "리소토 알라 밀라네제", "부야베스"],
-    "pairs": ["cardamom", "rosemary"]
+    "flavor": [
+      "꿀향",
+      "꽃향",
+      "약간 쌉쌀함"
+    ],
+    "uses": [
+      "파에야",
+      "리소토 알라 밀라네제",
+      "부야베스"
+    ],
+    "pairs": [
+      "cardamom",
+      "rosemary"
+    ]
   },
   {
     "id": "ginger",
     "name": "생강",
     "name_en": "Ginger",
     "latin": "Zingiber officinale",
+    "other_names": [],
     "category": "향신료",
     "emoji": "🫚",
     "image": "images/ginger.jpg",
     "summary": "알싸하고 따뜻한 뿌리줄기",
     "description": "생으로는 톡 쏘고 상큼하며, 말리면 더 따뜻하고 매운 향이 됩니다. 동서양을 가리지 않고 가장 널리 쓰이는 향신료 중 하나예요.",
     "origin": "동남아시아",
-    "flavor": ["알싸함", "상큼함", "따뜻함"],
-    "uses": ["진저브레드", "생강차", "볶음요리"],
-    "pairs": ["cinnamon", "star-anise", "turmeric"]
+    "flavor": [
+      "알싸함",
+      "상큼함",
+      "따뜻함"
+    ],
+    "uses": [
+      "진저브레드",
+      "생강차",
+      "볶음요리"
+    ],
+    "pairs": [
+      "cinnamon",
+      "star-anise",
+      "turmeric"
+    ]
   },
   {
     "id": "basil",
     "name": "바질",
     "name_en": "Basil",
     "latin": "Ocimum basilicum",
+    "other_names": [],
     "category": "허브",
     "emoji": "🌿",
     "image": "images/basil.jpg",
     "summary": "토마토의 단짝",
     "description": "달콤하고 상쾌한 향의 잎 허브로, 열에 약해 요리 마지막에 넣는 게 좋습니다. 이탈리아의 스위트 바질, 태국의 홀리 바질 등 품종이 다양해요.",
     "origin": "인도, 동남아시아",
-    "flavor": ["달콤함", "후추향", "상쾌함"],
-    "uses": ["페스토", "카프레제", "마르게리타 피자"],
-    "pairs": ["oregano", "rosemary"]
+    "flavor": [
+      "달콤함",
+      "후추향",
+      "상쾌함"
+    ],
+    "uses": [
+      "페스토",
+      "카프레제",
+      "마르게리타 피자"
+    ],
+    "pairs": [
+      "oregano",
+      "rosemary"
+    ]
   },
   {
     "id": "rosemary",
     "name": "로즈마리",
     "name_en": "Rosemary",
     "latin": "Salvia rosmarinus",
+    "other_names": [],
     "category": "허브",
     "emoji": "🌲",
     "image": "images/rosemary.jpg",
     "summary": "솔잎을 닮은 지중해 허브",
     "description": "바늘 같은 잎에서 소나무처럼 상쾌하고 진한 향이 납니다. 오래 익혀도 향이 잘 버텨 구이·로스트 요리에 제격입니다.",
     "origin": "지중해 연안",
-    "flavor": ["솔향", "상쾌함", "쌉쌀함"],
-    "uses": ["양갈비 구이", "포카치아", "감자 로스트"],
-    "pairs": ["thyme", "basil", "oregano"]
+    "flavor": [
+      "솔향",
+      "상쾌함",
+      "쌉쌀함"
+    ],
+    "uses": [
+      "양갈비 구이",
+      "포카치아",
+      "감자 로스트"
+    ],
+    "pairs": [
+      "thyme",
+      "basil",
+      "oregano"
+    ]
   },
   {
     "id": "thyme",
     "name": "타임",
     "name_en": "Thyme",
     "latin": "Thymus vulgaris",
+    "other_names": [],
     "category": "허브",
     "emoji": "🍃",
     "image": "images/thyme.jpg",
     "summary": "작은 잎, 깊은 향",
     "description": "작은 잎에 은은하면서도 깊은 향이 담긴 허브입니다. 프랑스 요리의 부케 가르니에 들어가며 수프·스튜에 폭넓게 어울려요.",
     "origin": "지중해 연안",
-    "flavor": ["흙내음", "약간 레몬향"],
-    "uses": ["부케 가르니", "스튜", "로스트 치킨"],
-    "pairs": ["rosemary", "oregano"]
+    "flavor": [
+      "흙내음",
+      "약간 레몬향"
+    ],
+    "uses": [
+      "부케 가르니",
+      "스튜",
+      "로스트 치킨"
+    ],
+    "pairs": [
+      "rosemary",
+      "oregano"
+    ]
   },
   {
     "id": "oregano",
     "name": "오레가노",
     "name_en": "Oregano",
     "latin": "Origanum vulgare",
+    "other_names": [],
     "category": "허브",
     "emoji": "🌱",
     "image": "images/oregano.jpg",
     "summary": "피자 가게의 그 냄새",
     "description": "말린 상태에서 향이 더 진해지는 드문 허브입니다. 이탈리아·그리스·멕시코 요리에 두루 쓰입니다.",
     "origin": "지중해 연안",
-    "flavor": ["쌉쌀함", "따뜻함", "후추향"],
-    "uses": ["피자", "토마토 소스", "그릭 샐러드"],
-    "pairs": ["basil", "thyme", "rosemary"]
+    "flavor": [
+      "쌉쌀함",
+      "따뜻함",
+      "후추향"
+    ],
+    "uses": [
+      "피자",
+      "토마토 소스",
+      "그릭 샐러드"
+    ],
+    "pairs": [
+      "basil",
+      "thyme",
+      "rosemary"
+    ]
   }
 ]

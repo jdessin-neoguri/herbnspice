@@ -50,6 +50,25 @@ function renderCabinet(spices) {
   });
 }
 
+/* ---------- 명칭 표 ----------
+   한국어 / 영어 / 학명은 고정, 그 아래로 other_names 배열의 언어가 순서대로 붙습니다.
+   other_names 예: [{ "lang": "그리스어", "name": "κανέλα", "roman": "kanéla" }]  (roman은 선택) */
+function namesTable(s) {
+  const rows = [
+    ["한국어", esc(s.name)],
+    ["영어", esc(s.name_en)],
+    ["학명", esc(s.latin), "latin"],
+    ...(s.other_names || []).map((o) => [
+      esc(o.lang),
+      `<span lang="${esc(o.code || "")}">${esc(o.name)}</span>` +
+        (o.roman ? `<span class="roman">${esc(o.roman)}</span>` : ""),
+    ]),
+  ];
+  return `<table class="names-table"><tbody>${rows
+    .map(([k, v, cls]) => `<tr><th scope="row">${k}</th><td${cls ? ` class="${cls}"` : ""}>${v}</td></tr>`)
+    .join("")}</tbody></table>`;
+}
+
 /* ---------- 상세 페이지 (spice.html) ---------- */
 function renderDetail(spices) {
   const main = document.getElementById("detail");
@@ -79,7 +98,7 @@ function renderDetail(spices) {
       <div class="card-body">
         <span class="tag">${esc(s.category)}</span>
         <h2>${esc(s.name)}</h2>
-        <p class="names">${esc(s.name_en)} · <i>${esc(s.latin)}</i></p>
+        ${namesTable(s)}
         <p class="summary">${esc(s.summary)}</p>
         <p>${esc(s.description)}</p>
 
